@@ -39,7 +39,7 @@ MAJ='^[A-G](b|_SHARP)?_?$'
 MIN='^[A-G](b|_SHARP)?_?m$'
 
 # take the chord
-read -p "Harmonical functions of: " CHORD
+read -p "Harmonic functions of: " CHORD
 
 # check if the chord is supported 
 for k in "${LIST[@]}"; do
@@ -68,7 +68,7 @@ search_in_array() {
 	for idx in "${!ARR[@]}"; do
 		# if chords match
 		if [[ "${ARR[idx]}" == "$CHORD" ]]; then
-	# echo key name and chord`s harmonical function 
+	# echo key name and chord`s harmonic function 
 	echo "Key ${ARR[0]}" : "${HARM[idx]}"
 	return 0
 	fi
@@ -77,7 +77,7 @@ search_in_array() {
 
 # iterate the LIST of keys
 for k in "${LIST[@]}"; do
-	# determine harmonical functions according to key type (MAJ , MIN)
+	# determine harmonic functions according to key type (MAJ , MIN)
 	if [[ $k =~ $MIN ]]; then
 	   ROMAN=("i." "III." "iv." "V." "VI." "VII.")
 	elif [[ $k =~ $MAJ ]]; then
@@ -86,7 +86,7 @@ for k in "${LIST[@]}"; do
 	# place Key name (k) at the end of CHORDS_ variable , to iterate through all chords in  whole $LIST	
 	KEYVAR=("CHORDS_$k[@]")
 	KEY=("${!KEYVAR}")
-	# Assign the harmonical function of the CHORD in each KEY
+	# Assign the harmonic function of the CHORD in each KEY
 	ROMANVAR=("ROMAN[@]")
 	HARM=("${!ROMANVAR}")
 	# call the function
